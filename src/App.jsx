@@ -43,14 +43,14 @@ function App() {
         style={{ fontFamily: "handjet" }}
       >
         {" "}
-        <div className="bg-emerald-950 flex justify-center h-[80px] items-center rounded-lg shadow-lg w-full">
+        <div className="bg-emerald-950 flex justify-center h-[80px] items-center rounded-lg shadow-lg w-full bg-opacity-90">
           {" "}
           <span className="text-lime-400 font-extrabold text-3xl handjet-head">
             Password Generator
           </span>
         </div>
-        <div className="flex flex-col gap-6 p-4 justify-center items-center border border-emerald-500 rounded-2xl shadow-lg bg-white w-150 text-xl h-[300px]">
-          <div className="flex flex-row gap-6">
+        <div className="flex flex-col gap-6 p-4 justify-center items-center border border-emerald-500 rounded-2xl bg-opacity-75 shadow-lg bg-white w-150 text-xl h-[300px]">
+          <div className="flex flex-col md:flex-row gap-6">
             <label>
               Generated Password:{" "}
               <input
@@ -63,13 +63,13 @@ function App() {
               ></input>
             </label>
             <button
-              className="rounded-3xl bg-emerald-950 text-white w-[120px] justify-center items-center h-[40px] hover:bg-lime-400"
+              className="rounded-3xl bg-emerald-950 text-white w-[120px] justify-center items-center h-[40px] hover:bg-lime-400 md:ml-0 ml-[138px]"
               onClick={textCopied}
             >
               Copy
             </button>
           </div>
-          <div className="flex flex-row gap-4 justify-center">
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
             <label>
               Length: {passLength}{" "}
               <input
