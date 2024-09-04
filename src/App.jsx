@@ -85,7 +85,7 @@ function App() {
               Numbers:{" "}
               <input
                 type="checkbox"
-                className="border bg-emerald-950 rounded"
+                className="border accent-emerald-950 rounded"
                 onClick={() => setIsNumber(!isNumber)}
               ></input>
             </label>
@@ -93,7 +93,7 @@ function App() {
               Character:{" "}
               <input
                 type="checkbox"
-                className="border bg-emerald-950 rounded"
+                className="border accent-emerald-950 rounded"
                 onClick={() => setIsChar(!isChar)}
               ></input>
             </label>
