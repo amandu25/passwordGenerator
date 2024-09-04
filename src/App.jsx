@@ -11,20 +11,30 @@ function App() {
 
   useEffect(() => {
     const generatePassword = () => {
-      let pass = "";
-      let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let pass = "";
+  let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let numbers = "0123456789";
+  let specialChars = "!@#$%^&*?<>";
 
-      if (isNumber) str += "01234567890123456789012345678901234567890123456789";
-      if (isChar) str += "!@#$%^&*?<>!@#$%^&*?<>!@#$%^&*?<>!@#$%^&*?<>";
+  if (isNumber) str += numbers;
+  if (isChar) str += specialChars;
 
-      for (let i = 0; i < passLength; i++) {
-        let index = Math.floor(Math.random() * (str.length + 1));
+  // Ensure at least one number and one special character if required
+  if (isNumber) pass += numbers.charAt(Math.floor(Math.random() * numbers.length));
+  if (isChar) pass += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
 
-        pass += str.charAt(index);
-        console.log(index);
-      }
-      setPassword(pass);
-    };
+  // Fill the rest of the password
+  for (let i = pass.length; i < passLength; i++) {
+    let index = Math.floor(Math.random() * str.length);
+    pass += str.charAt(index);
+  }
+
+  // Shuffle the password to avoid predictable patterns
+  pass = pass.split('').sort(() => 0.5 - Math.random()).join('');
+
+  setPassword(pass);
+};
+
 
     generatePassword();
   }, [passLength, isNumber, isChar]);
