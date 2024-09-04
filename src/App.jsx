@@ -14,8 +14,8 @@ function App() {
       let pass = "";
       let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-      if (isNumber) str += "0123456789";
-      if (isChar) str += "!@#$%^&*?<>";
+      if (isNumber) str += "01234567890123456789012345678901234567890123456789";
+      if (isChar) str += "!@#$%^&*?<>!@#$%^&*?<>!@#$%^&*?<>!@#$%^&*?<>";
 
       for (let i = 0; i < passLength; i++) {
         let index = Math.floor(Math.random() * (str.length + 1));
